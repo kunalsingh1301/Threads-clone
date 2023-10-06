@@ -6,7 +6,7 @@ import { usePathname, useRouter } from "next/navigation";
 import { SignOutButton, SignedIn } from "@clerk/nextjs";
 
 function Leftsidebar() {
-    console.log("sidebarLinks:", sidebarLinks)
+    // console.log("sidebarLinks:", sidebarLinks)
     const router = useRouter();
     const pathname = usePathname();
     return (
