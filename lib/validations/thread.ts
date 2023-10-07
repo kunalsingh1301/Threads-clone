@@ -6,5 +6,5 @@ export const ThreadValidation  = z.object({
 })
 
 export const CommentValidation  = z.object({
-    thread: z.string().url().min(1),
+    thread: z.string().nonempty().min(1),
 })

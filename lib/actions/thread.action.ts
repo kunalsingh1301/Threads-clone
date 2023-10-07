@@ -85,7 +85,7 @@ export async function fetchThreadById(id:string){
                 },
                 {
                     path:'children',
-                    model:Thread,
+                    model: Thread,
                     populate:{
                         path:'author',
                         model:User,
@@ -107,10 +107,9 @@ export async function addCommentToThread(
     userId: string,
     path:string,
     ){
+        connectToDB();
         
         try {
-            connectToDB();
-            console.log("zueep")
             const originalThread = await Thread.findById(threadId);
 
             if(!originalThread){
