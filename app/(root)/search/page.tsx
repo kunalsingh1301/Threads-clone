@@ -1,9 +1,7 @@
 
 import UserCard from "@/components/cards/UserCard";
-import { profileTabs } from "@/constants";
 import { fetchUser, fetchUsers } from "@/lib/actions/user.actions";
 import { currentUser } from "@clerk/nextjs";
-import Image from "next/image";
 import { redirect } from "next/navigation";
 
 
