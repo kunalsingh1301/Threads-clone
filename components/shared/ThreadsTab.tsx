@@ -1,6 +1,7 @@
 import { fetchUserPosts } from "@/lib/actions/user.actions"
 import { redirect } from "next/navigation";
 import ThreadCard from "../cards/ThreadCards";
+import { fetchCommunityPosts } from "@/lib/actions/community.actions";
 
 interface Props {
     currentUserId: string,
@@ -14,9 +15,13 @@ const ThreadsTab = async (
         accountType
     }: Props
 ) => {
+    let result:any;
+    if(accountType === "Community"){
+        result =   await fetchCommunityPosts(accountId);
+    }else{
+        result = await fetchUserPosts(accountId);
+    }
 
-    //TODO:Fetch profile threads
-    let result = await fetchUserPosts(accountId);
 
     if (!result) redirect('/')
 
